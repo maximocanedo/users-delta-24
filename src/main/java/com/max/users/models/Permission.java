@@ -1,10 +1,8 @@
 package com.max.users.models;
-import org.springframework.security.core.GrantedAuthority;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import org.springframework.security.core.GrantedAuthority;
 
 @Entity
 public class Permission implements GrantedAuthority {
