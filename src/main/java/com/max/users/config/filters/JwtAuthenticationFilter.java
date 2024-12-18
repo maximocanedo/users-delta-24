@@ -1,6 +1,7 @@
 package com.max.users.config.filters;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.max.users.models.exceptions.Fail;
 import com.max.users.services.JwtService;
 import com.max.users.services.UserService;
 import io.jsonwebtoken.ExpiredJwtException;
@@ -8,7 +9,7 @@ import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import org.springframework.util.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.lang.NonNull;

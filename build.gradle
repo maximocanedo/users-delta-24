@@ -34,9 +34,11 @@ dependencies {
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
     // https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-api
     implementation 'io.jsonwebtoken:jjwt-api:0.12.6'
-    // https://mvnrepository.com/artifact/org.apache/org.apache.commons.lang3
-    implementation 'org.apache:org.apache.commons.lang3:3.4.0'
-
+    implementation "org.apache.commons:commons-lang3"
+    // https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-impl
+    runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.12.6'
+    // https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-jackson
+    runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.12.6'
 
 
 }
