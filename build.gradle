@@ -28,6 +28,9 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-graphql'
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.18.2'
+    implementation files('libs/validators-0.0.1.jar')
     // https://mvnrepository.com/artifact/org.slf4j/slf4j-api
     // implementation 'org.slf4j:slf4j-api:2.0.16'
     // https://mvnrepository.com/artifact/ch.qos.logback/logback-classic

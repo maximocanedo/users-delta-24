@@ -1,1 +1,3 @@
-rootProject.name = 'Users'
+rootProject.name = 'La Colectiva'
+include ':validators'
+project(':validators').projectDir = file('validators')
