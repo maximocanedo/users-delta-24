@@ -1,5 +1,6 @@
 package ar.com.colectiva.validators.exceptions;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
@@ -8,6 +9,7 @@ import ar.com.colectiva.validators.converters.ValidationErrorDeserializer;
 import ar.com.colectiva.validators.converters.ValidationErrorSerializer;
 
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @JsonSerialize(using = ValidationErrorSerializer.class)
 @JsonDeserialize(using = ValidationErrorDeserializer.class)
@@ -30,4 +32,17 @@ public class ValidationError extends RuntimeException {
     public Set<String> getErrors() {
         return errors;
     }
+
+    @JsonIgnore
+    public String getMessage() {
+        return new StringBuilder()
+                .append("Validation error for field '")
+                .append(getField())
+                .append("' with errors:")
+                .append(getErrors().stream()
+                        .map(error -> "\n\t · " + error)
+                        .collect(Collectors.joining("")))
+                .toString();
+    }
+
 }

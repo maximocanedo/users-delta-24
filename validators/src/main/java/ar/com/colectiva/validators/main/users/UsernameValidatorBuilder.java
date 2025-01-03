@@ -40,13 +40,13 @@ public abstract class UsernameValidatorBuilder<T extends StringValidatorBuilder<
     public T meetsContentRequirements(String doesNotStartWithLetterCaseFeedback, String generalCaseFeedback) {
         return this
                 .matches("^[a-zA-Z].*", doesNotStartWithLetterCaseFeedback)
-                .matches("^[a-zA-Z0-9_]+$", generalCaseFeedback);
+                .matches("^[a-zA-Z0-9_.]+$", generalCaseFeedback);
     }
     public T meetsContentRequirements(String feedback) {
         return this.meetsContentRequirements(feedback, feedback);
     }
     public T meetsContentRequirements() {
-        return this.meetsContentRequirements("Debe comenzar con una letra. ", "Debe tener únicamente letras, números y/o guiones bajos. ");
+        return this.meetsContentRequirements("Debe comenzar con una letra. ", "Debe tener únicamente letras, números, puntos y/o guiones bajos. ");
     }
 
     public UsernameValidatorBuilder<T> isAvailable(String feedback) {
